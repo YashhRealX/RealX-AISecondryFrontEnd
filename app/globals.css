@@ -3,25 +3,39 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 0, 0, 0;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+/* Custom styles for the property slider */
+.property-slider .slick-prev,
+.property-slider .slick-next {
+  z-index: 10;
+  width: 30px;
+  height: 30px;
+}
+
+.property-slider .slick-prev {
+  left: 10px;
+}
+
+.property-slider .slick-next {
+  right: 10px;
+}
+
+.property-slider .slick-dots {
+  bottom: 10px;
+}
+
+.property-slider .slick-dots li button:before {
+  color: white;
+}
+
+.property-slider .slick-dots li.slick-active button:before {
+  color: white;
 }
